@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  title
+  h1= title
+  ul
+    each item in cars
+      li
+        = item.name 
+        br
+        a(href='/cars/#{item._id}') Show
+        br
+        a(href='/cars/#{item._id}/edit') Edit
+        br
+        form(action='/cars/#{item._id}',method='delete',enctype='application/x-www-form-urlencoded')
+          input(type='hidden',value='DELETE',name='_method')
+          button(type='submit').
+            Delete
+        
+  form(action='/cars', method='post')
+    input(type='text' name='carinput')
+    input(type='submit')
+//?_method=DELETE

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+  form(action='/cars/#{car.id}',method='post')
+    input(value=car.name, type='text' name='changeCar')
+    button(type='submit').
+      Submit
+  //- 
+  //- input(value=car.name, type='text')
+  //-   button(type='submit').
+  //-     Submit
